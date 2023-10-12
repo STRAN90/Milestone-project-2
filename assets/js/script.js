@@ -33,14 +33,60 @@ function startGame() {
 
 // Function to generate random addition and subtraction questions
 function generateQuestion() {
-    // Generate a random question and return it as an object
-    // Example: { text: "3 + 4", answer: 7 }
-}
+    const minNumber = 1;
+    const maxNumber = 50;
+    let num1 = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+    let num2 = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+    const operator = Math.random() < 0.5 ? '+' : '-';
+    let answer;
+  
+    if (operator === '+') {
+        answer = num1 + num2;
+    } else {
+        // Ensure there are no negative answers
+        if (num1 < num2) {
+            const temp = num1;
+            num1 = num2;
+            num2 = temp;
+        }
+        answer = num1 - num2;
+    }
+  
+    const questionText = `${num1} ${operator} ${num2}`;
+  
+    // Ensure the answer is a positive integer
+    if (answer < 0) {
+        return generateQuestion();
+    }
+  
+    return { text: questionText, answer };
+  } 
 
 // Function to display a question and answer choices
 function displayQuestion() {
-    // Display the current question and answer choices
-}
+    const question = questions[currentQuestionIndex];
+    document.getElementById('question-area').textContent = question.text;
+    
+    const answers = [];
+    for (let i = 0; i < 4; i++) {
+      let randomAnswer;
+      do {
+        randomAnswer = Math.floor(Math.random() * 40); // Generate random answers
+      } while (answers.includes(randomAnswer) || randomAnswer === question.answer);
+      answers.push(randomAnswer);
+    }
+              
+  // Replace one of the random answers with the correct answer
+  const randomIndex = Math.floor(Math.random() * 4);
+  answers[randomIndex] = question.answer;
+              
+  // Display the answer choices
+  for (let i = 0; i < 4; i++) {
+    const box = document.getElementById(`box${i + 1}`);
+    box.textContent = answers[i];
+    box.onclick = () => checkAnswer(answers[i]);
+  }
+  }
 
 // Function to check if the selected answer is correct
 function checkAnswer(selectedAnswer) {
