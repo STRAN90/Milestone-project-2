@@ -90,7 +90,34 @@ function displayQuestion() {
 
 // Function to check if the selected answer is correct
 function checkAnswer(selectedAnswer) {
-    // Check if the selected answer is correct and update the game accordingly
-}
+    const question = questions[currentQuestionIndex];
+    if (selectedAnswer === question.answer) {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        displayQuestion(); // Display the next question
+      } else {
+        endGame();
+      }
+      displayCorrect(); // Call the function to display the "Correct!" message
+    } else {
+      displayIncorrect();
+    }
+  }
+  function displayCorrect() {
+    const correctDiv = document.getElementById('correct');
+    correctDiv.style.display = 'block'; // Make the "Correct!" message visible
+    setTimeout(() => {
+        correctDiv.style.display = 'none'; // Hide the message after a certain time (e.g., 1 second)
+    }, 1000);
+  }
+  
+  function displayIncorrect() {
+    const incorrectDiv = document.getElementById('incorrect');
+    incorrectDiv.style.display = 'block';
+    setTimeout(() => {
+        incorrectDiv.style.display = 'none';
+    }, 1000);
+  }
+
 
 // Add more functions for showing/hiding elements, displaying messages, and handling the timer
