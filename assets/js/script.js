@@ -21,7 +21,18 @@ function startGame() {
         questions.push(generateQuestion());
     }
     // Display the first question
-    displayQuestion();
+    function displayQuestion() {
+      const question = questions[currentQuestionIndex];
+      document.getElementById('question-area').textContent = question.text;
+      
+      const answers = [];
+      for (let i = 0; i < 4; i++) {
+        let randomAnswer;
+        do {
+          randomAnswer = Math.floor(Math.random() * 40); // Generate random answers
+        } while (answers.includes(randomAnswer) || randomAnswer === question.answer);
+        answers.push(randomAnswer);
+      }
     // Reset the score and timer
     document.getElementById('scorevalue').textContent = score;
     timeremaining = 60;
