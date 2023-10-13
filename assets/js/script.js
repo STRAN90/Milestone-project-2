@@ -9,6 +9,7 @@ document.getElementById('startReset').addEventListener('click', () => {
     document.getElementById('gameOver').style.display = 'none';
 });
 
+
 // Function to start or reset the game
 function startGame() {
     // Initialize game variables
@@ -119,5 +120,8 @@ function checkAnswer(selectedAnswer) {
     }, 1000);
   }
 
+// End the game
 
-// Add more functions for showing/hiding elements, displaying messages, and handling the timer
+// Start the game
+
+// Add click event to the Start/Reset button
