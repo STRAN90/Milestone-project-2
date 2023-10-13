@@ -1,7 +1,3 @@
-* {
-    padding: 0;
-    margin: 0;
-}
 
 body {
     background-color: rgb(255, 255, 255);
@@ -18,7 +14,6 @@ body {
     background-color: #E6ECF0;
     box-sizing: border-box;
     width: 85%;
-    height: 65vh;
     max-height: 450px;
     max-width: 830px;
     margin-left: auto;
@@ -114,7 +109,6 @@ body {
 }
 
 #startReset {
-    width: 78px;
     padding: 10px;
     background-color: rgb(255, 255, 255);
     border-radius: 3px;
@@ -123,7 +117,7 @@ body {
     -moz-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
-    position: relative;
+    position: absolute;
     transition: all 0.2s;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
