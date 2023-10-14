@@ -3,10 +3,13 @@ let currentQuestionIndex = 0;
 let score = 0;
 let timeremaining = 60; // Set your desired time
 
+// Wait for DOM to finsih loading before running the game
 // Add a click event listener to the start/reset button
-document.getElementById('startReset').addEventListener('click', () => {
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById('startReset').addEventListener('click', () => {
     startGame();
     document.getElementById('gameOver').style.display = 'none';
+  });
 });
 
 
