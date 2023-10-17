@@ -1,6 +1,10 @@
 // Define the questions array at the global scope
 const questions = [];
 
+// Declare and initialize the score variable at the global scope
+let score = 0;
+let playing = false;
+
 // Function to show an element by changing its display style to 'block'
 function show(elementId) {
   const element = document.getElementById(elementId);
