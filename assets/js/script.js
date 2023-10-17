@@ -3,7 +3,7 @@ const questions = [];
 
 // Wait for DOM to finsih loading before running the game
 // Add a click event listener to the start/reset button
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function() {
   // Initialize game variables
   let currentQuestionIndex = 0;
   let score = 0;
@@ -18,33 +18,37 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Function to start or reset the game
 function startGame() {
-  // Clear previous questions and generate new ones
-  questions.length = 0;
-  for (let i = 0; i < 10; i++) { // Generate 10 questions]
+  currentQuestionIndex = 0;
+  questions.length = 0; // Clear previous questions
+  for (let i = 0; i < 10; i++) { // Generate 10 questions
     questions.push(generateQuestion());
   }
-  // Display the first question
-  function displayQuestion() {
-    const question = questions[currentQuestionIndex];
-    document.getElementById('question-area').textContent = question.text;
-    
-    const answers = [];
-    for (let i = 0; i < 4; i++) {
-      let randomAnswer;
-      do {
-        randomAnswer = Math.floor(Math.random() * 40); // Generate random answers
-      } while (answers.includes(randomAnswer) || randomAnswer === question.answer);
-      answers.push(randomAnswer);
-    }
-    // Reset the score and timer
-    document.getElementById('scorevalue').textContent = score;
-    timeremaining = 60;
+  displayQuestion();
+
+  // Reset the score
+  score = 0;
+  document.getElementById('scorevalue').textContent = score;
+
+  // Reset the timer
+  timeremaining = 60;
+  document.getElementById('timeremainingvalue').textContent = timeremaining;
+
+  // Hide game over message
+  document.getElementById('gameOver').style.display = 'none';
+
+  // Change the button text to "Reset Game"
+  document.getElementById('startReset').textContent = 'Reset Game';
+
+  // Add a timer to count down
+  const timerInterval = setInterval(() => {
+    timeremaining--;
     document.getElementById('timeremainingvalue').textContent = timeremaining;
-    // Hide game over message
-    document.getElementById('gameOver').style.display = 'none';
-    // Change the button text to "Reset Game"
-    document.getElementById('startReset').textContent = 'Reset Game';
-  }
+    if (timeremaining <= 0) {
+      clearInterval(timerInterval);
+      endGame();
+    }
+  }, 1000);
+}
 
 // Function to generate random addition and subtraction questions
 function generateQuestion() {
@@ -67,7 +71,7 @@ function generateQuestion() {
     answer = num1 - num2;
   }
   
-  const questionText = `${num1} ${operator} ${num2}`;7
+  const questionText = `${num1} ${operator} ${num2}`;
   
   // Ensure the answer is a positive integer
   if (answer < 0) {
@@ -140,16 +144,6 @@ function endGame(params) {
   const gameOverDiv = document.getElementById('gameOver');
   gameOverDiv.textContent = 'Game Over';
   gameOverDiv.style.display = 'block';
-}
-
-// Start the game
-function startGame() {
-  currentQuestionIndex = 0;
-  question.lenght = 0; //Clear previous questions
-  for (let i = 0; i < 10; i++) { // Generate 10 questions
-    question.push(generateQuestion());
-  }
-  displayQuestion();
 }
 
 // Add click event to the Start/Reset button

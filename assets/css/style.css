@@ -1,8 +1,3 @@
-
-body {
-    background-color: rgb(255, 255, 255);
-}
-
 .heading {
     text-align: center;
     font-size: 2.5rem;
@@ -52,7 +47,7 @@ body {
     height: 50%;
     margin: 50px auto 10px auto;
     background-color: #9DA0EA;
-    font-size: -webkit-xxx-large;
+    font-size: 100px;
     text-align: center;
     color: black;
     font-family: sans-serif;
