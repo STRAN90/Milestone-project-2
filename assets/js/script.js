@@ -140,7 +140,11 @@ function displayQuestion() {
 function checkAnswer(selectedAnswer) {
   const question = questions[currentQuestionIndex];
   if (selectedAnswer === question.answer) {
+    // Correct answer: Increase the score
+    score++;
+    document.getElementById("scoreValue").innerHTML = score; // Update the displayed score
     currentQuestionIndex++;
+    
     if (currentQuestionIndex < questions.length) {
       displayQuestion(); // Display the next question
     } else {
