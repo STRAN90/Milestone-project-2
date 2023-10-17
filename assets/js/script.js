@@ -1,53 +1,61 @@
 //Define the question array at the global scope
 const questions = [];
+let score = 0; // Declare score at the global level
+
+// Initialize game variables
+let currentQuestionIndex = 0;
 
 // Wait for DOM to finsih loading before running the game
 // Add a click event listener to the start/reset button
 document.addEventListener('DOMContentLoaded', function() {
-  // Initialize game variables
+  const questions = [];
   let currentQuestionIndex = 0;
-  let score = 0;
-  let playing = false;
-  let timeremaining = 60; // Set desired time
+  let playing = false; 
 
   document.getElementById('startReset').addEventListener('click', () => {
-    startGame();
-    document.getElementById('gameOver').style.display = 'none';
+      startGame();
+      document.getElementById('gameOver').style.display = 'none';
   });
 });
 
-// Function to start or reset the game
-function startGame() {
-  currentQuestionIndex = 0;
-  questions.length = 0; // Clear previous questions
-  for (let i = 0; i < 10; i++) { // Generate 10 questions
-    questions.push(generateQuestion());
-  }
-  displayQuestion();
+// Function to restart or reset game
+document.getElementById("startReset").onclick = function () {
+  if (!playing) { // Check if 'playing' is false (not playing)
+    playing = true; // Change mode to playing
+      score = 0; //set score to 0
+      document.getElementById("scoreValue").innerHTML = score;
+      show("timeRemaining"); //show countdown box
+      timeremaining = 60;
+      document.getElementById("timeremainingvalue").innerHTML = timeRemaining;
+      hide("gameOver"); //hide game over box
+      document.getElementById("startReset").innerHTML = "Reset Game"; //change button to reset
+      
+      startCountdown(); // Start countdown
+      generateQuestion(); // Generate a new Q&A
+    }
+}
 
-  // Reset the score
-  score = 0;
-  document.getElementById('scorevalue').textContent = score;
-
-  // Reset the timer
-  timeremaining = 60;
-  document.getElementById('timeremainingvalue').textContent = timeremaining;
-
-  // Hide game over message
-  document.getElementById('gameOver').style.display = 'none';
-
-  // Change the button text to "Reset Game"
-  document.getElementById('startReset').textContent = 'Reset Game';
-
-  // Add a timer to count down
-  const timerInterval = setInterval(() => {
+function startCountdown() {
+  action = setInterval(function () {
     timeremaining--;
-    document.getElementById('timeremainingvalue').textContent = timeremaining;
-    if (timeremaining <= 0) {
-      clearInterval(timerInterval);
-      endGame();
+    document.getElementById('timeremainingvalue').innerHTML = timeremaining;
+    if (timeremaining == 0) { // Game Over
+      stopCountdown();
+      show("gameOver");
+      document.getElementById('gameOver').innerHTML = '<p>Game Over!</p><p>Your score is '+ score +'.</p>';
+      hide('timeremaining');
+      hide('correct');
+      hide('incorrect');
+      playing = false;
+      document.getElementById('startReset').innerHTML = "startGame";
     }
   }, 1000);
+}
+
+//stop counter
+
+function stopCountdown() {
+  clearInterval(action);
 }
 
 // Function to generate random addition and subtraction questions
@@ -111,6 +119,8 @@ function displayQuestion() {
 function checkAnswer(selectedAnswer) {
   const question = questions[currentQuestionIndex];
   if (selectedAnswer === question.answer) {
+    score++; // Increment the score
+    document.getElementById('scorevalue').textContent = score;
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
       displayQuestion(); // Display the next question
@@ -144,6 +154,16 @@ function endGame(params) {
   const gameOverDiv = document.getElementById('gameOver');
   gameOverDiv.textContent = 'Game Over';
   gameOverDiv.style.display = 'block';
+}
+
+// Start the game
+function startGame() {
+  currentQuestionIndex = 0;
+  questions.length = 0; // Clear previous questions
+  for (let i = 0; i < 10; i++) { // Generate 10 questions
+      questions.push(generateQuestion());
+  }
+  displayQuestion();
 }
 
 // Add click event to the Start/Reset button
