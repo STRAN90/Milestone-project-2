@@ -4,6 +4,15 @@ let score = 0;
 let playing = false;
 let timeremaining = 60;
 
+let canPlaySound = true; // Define canPlaySound as a global variable
+
+function playSound(audioURL) {
+  if (canPlaySound === true) {
+    const audio = new Audio(audioURL);
+    audio.play();
+  }
+}
+
 // Function to show an element by changing its display style to 'block'
 function show(elementId) {
   const element = document.getElementById(elementId);
@@ -151,6 +160,7 @@ function checkAnswer(selectedAnswer) {
     score++;
     document.getElementById("scoreValue").innerHTML = score; // Update the displayed score
     currentQuestionIndex++;
+    playSound("assets/sounds/meow.mp3");
 
     if (currentQuestionIndex < questions.length) {
       displayQuestion(); // Display the next question
@@ -174,6 +184,7 @@ function displayCorrect() {
 function displayIncorrect() {
   const incorrectDiv = document.getElementById('incorrect');
   incorrectDiv.style.display = 'block';
+  playSound("assets/sounds/no_meow.mp3")
   setTimeout(() => {
       incorrectDiv.style.display = 'none';
   }, 1000);
