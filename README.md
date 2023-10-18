@@ -142,7 +142,7 @@ The website is composed of one page. The page on the website will have:
 
   * Add more levels to increase difficulty, for example larger sums or division and multiplication levels. 
   * Send email notification to user once form has been submitted. 
-  * Add sound when user clicks on correct answer. 
+  * Background soundtrack for the game, to engage the user more. 
 
 ### Accessibility 
 
@@ -323,6 +323,7 @@ Content for this project was written by Sonia Majewska.
 ###  Media
 
 - Freepik - was used for background image and multiple choice answers imagery.  
+- Myinstants - for sound files used for clicks on incorrect or correct answers. 
 
 ### Acknowledgments
 
