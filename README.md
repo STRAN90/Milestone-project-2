@@ -1,7 +1,7 @@
 # Catculation Countdown 
 
 <p align="center">
-  <img src="README.docs/readme/amiresponsive.png" width="600" height="100%">
+  <img src="README.docs/ami.png" width="600" height="100%">
 </p>
 
 ## Project Overview 
