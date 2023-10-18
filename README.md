@@ -117,21 +117,26 @@ The website is composed of one page. The page on the website will have:
 - Contact form - user can contact the game provider if they has questions or suggestions for the game.
 - Footer - contains social media links. Icons were used to keep the footer clean and because they are universally recognisable. 
 
-- **Title** 
-  - Located at top of the page.  
+#### Title
+- Located at top of the page.  
   
-- **Score Area**
-  - Area where the user can visually see their score each time they choose correct answer from multiply choice.   
-- **Game Area**
-  - This section gives instructions of how to play the game. Also where the question will appear whem the game is started. 
-- **Multiple answer choices**
-  - This section shows four answers to the question at hand. Only one is correct, once the correct answer is clicked on a new question appears. 
-- **Start Game section**
-  - When the user clicks on this, the game starts by a question appearing and the timer countsdown.
-- **Contact Form**
-  - Allows the user to contact the game provider if they has questions or suggestions for the game.
-- **Footer**
-  - Contains social media links. 
+#### Score Area
+- Area where the user can visually see their score each time they choose correct answer from multiply choice.   
+
+#### Game Area
+- This section gives instructions of how to play the game. Also where the question will appear whem the game is started. 
+
+#### Multiple answer choices
+- This section shows four answers to the question at hand. Only one is correct, once the correct answer is clicked on a new question appears. 
+
+#### Start Game section
+- When the user clicks on this, the game starts by a question appearing and the timer countsdown.
+
+#### Contact Form
+- Allows the user to contact the game provider if they has questions or suggestions for the game.
+
+#### Footer
+- Contains social media links. 
 
 ### Future Implementations.
 
