@@ -263,7 +263,7 @@ div#confirmation p {
 #message {
   margin-top: 100%;
   margin-bottom: 1rem;
-  color: indigo;
-  font-size: -webkit-xxx-large;
+  color: #6c757d;
+  font-size: medium;
   font-family: sans-serif;
 }
