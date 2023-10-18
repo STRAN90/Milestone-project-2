@@ -1,4 +1,4 @@
-# Calculation Countdown 
+# Catculation Countdown 
 
 <p align="center">
   <img src="README.docs/readme/amiresponsive.png" width="600" height="100%">
@@ -6,7 +6,7 @@
 
 ## Project Overview 
 
-**Calculation Countdown**  is a website developed from the idea from the Love Maths project. The inspiration came from my daughter's love of learning maths, especially addition and subtraction sums in school and at home.
+**Catculation Countdown**  is a website developed from the idea from the Love Maths project. The inspiration came from my daughter's love of learning maths and cats, especially addition and subtraction sums in school and at home.
 
 I have designed the website to look child friendly as its main focus. It is designed to be fully responsive and accessible on a range of devices, making it easy to navigate for children and parents. 
 
@@ -100,71 +100,49 @@ The website uses a mixture of colours thats bright and attractive, I wanted to c
 Images provided by business owner Thuy Lewis and istockphoto.com. 
 
 ### Wireframes
-Home Page Wireframe:  
-
-![Home Page](https://github.com/STRAN90/ThuyLewisNailsBrowsAndLashes/assets/110825183/ca77c15a-c224-4e08-8386-488be9151957)
-
-Treatment Page Wireframe:  
-
-![Treatments Page](https://github.com/STRAN90/ThuyLewisNailsBrowsAndLashes/assets/110825183/96c15916-651a-4e32-9c57-8dd2535e3b68)
-
-Gallery Page Wireframe:  
-
-![Gallery](https://github.com/STRAN90/ThuyLewisNailsBrowsAndLashes/assets/110825183/1df66899-c1c4-4248-bccd-a6717d472d50)
-
-Contact Us Page Wireframe:  
-
-![Contact Page](https://github.com/STRAN90/ThuyLewisNailsBrowsAndLashes/assets/110825183/79cd88e5-4d71-4e5b-ab8b-e238f840a2e8)  
 
 Wireframes were created for mobile, tablet and desktop. 
 
+![Wireframe](https://github.com/STRAN90/Milestone-project-2/assets/110825183/abc168ee-e655-40d2-aa46-8dd3f1b09e7b)
+
 ### Features
 
-The website is composed of four pages, each is accessible from the navigation menu (home page, treatments, gallery & contact page). 
+The website is composed of one page. The page on the website will have:
 
-All pages on the website have:
+-An simple and colorful page structure so that the user can easily start the game.
+-"Start" button - starts the game for the user.
+-Instructions of how to play.
+-"Reset" button - user can reset the game and play again.
+-"Game Over Feature" - after the timer reaches to 0 sec, a game over window appears showing the score the user has achieved. 
+-Contact form - user can contact the game provider if they has questions or suggestions for the game.
+-Footer - contains social media links. Icons were used to keep the footer clean and because they are universally recognisable. 
 
--A responsive navigation bar at the top which allows the user to navigate through the site. 
-
--A footer which contains social media links to Facebook and Instagram. Icons were used to keep the footer clean and because they are universally recognisable. 
-
-* Home Page. 
-  * Hero Section. 
-  The hero shows an image of a popular nail design liked by clients. 
-  * About Section.
-  This gives users information of Thuy Lewis. On large screens an image of Thuy Lewis in action is seen and laid out in a row. However no image is seen on mobile device. 
-  * Testimonials Section
-  This section gives reviews from clients. On mobile these are stacked vertically, however on larger screens there can be seen an extra review and set out in rows of twos. 
-  * Treatments Section
-  This section shows images of treatments and a table of list of treatments. On mobile screen they are stacked vertically, however on larger screens the images are on the right side of the table of treatments. 
-
-* Treatment Page. 
-  * Hero Section. 
-  The hero shows an image of a salon area. 
-  * A Table of treatments and pricelist.
-
-* Gallery Page. 
-  * A different variety of current nail designs to showcase Thuy Lewis skills, including eyebrows and lashes. Two more images can be seen on the desktop browser. 
-
-* Contact Page. 
-  * A number of ways to get in touch with Thuy Lewis, address, email and phone number. 
-  * Opening times. 
-  * Contact form Section 
-  Form to contact the business owner and map image of location of business. The form contains fields for the users name, email address, phone number and personal message they want to send to the business owner. The user submits the form using the submit button. Users must fill in the name, email, and text area fields to be able to submit the form. If they don't a tooltip will guide them to fill in any information they have missed.
-  
+  * Title. 
+  Located at top of the page.  
+  * Score Area.
+  Area where the user can visually see their score each time they choose correct answer from multiply choice.   
+  * Game Area
+  This section gives instructions of how to play the game. Also where the question will appear whem the game is started. 
+  * Multiple answer choices.
+  This section shows four answers to the question at hand. Only one is correct, once the correct answer is clicked on a new question appears. 
+  * Start Game section.
+  When the user clicks on this, the game starts by a question appearing and the timer countsdown.
+  *Contact Form. 
+  Allows the user to contact the game provider if they has questions or suggestions for the game.
+  * Footer. 
+  Contains social media links. 
 
 ### Future Implementations.
 
-  * Slideshow image reel for gallery page. 
+  * Add more levels to increase difficulty, for example larger sums or division and multiplication levels. 
   * Send email notification to user once form has been submitted. 
-  * Add favicon to website. 
+  * Add sound when user clicks on correct answer. 
 
 ### Accessibility 
 
 I have been mindful during coding to ensure the website is as accessible friendly as possible. I have achieved this by:
 
 * Using semantic HTML.
-* Using descriptive alt attributes on images on the site. 
 * Ensuring there are sufficient colour contrast throughout the site.
 * Using font style with good accessibility.
 
@@ -176,14 +154,13 @@ I have been mindful during coding to ensure the website is as accessible friendl
 
 - HTML
 - CSS
+- JavaScript
 
 ### Frameworks, Libraries & Programs Used
 
 Balsamiq - Used to create wireframes. 
 
 Bootstrap version 4.2.1 - The Framework for the website. Code used for additional CSS styling was also implemented in style.css. 
-
-Google map generator - Was used to import business location.
 
 [Gitpod](https://gitpod.io/) - Open source developer platform, an IDE running in the Cloud. 
 
@@ -203,7 +180,7 @@ Google map generator - Was used to import business location.
 
 Google Dev Tools - To troubleshoot and test features, solve issues with responsiveness and styling. 
 
-[Tinypng](https://tinypng.com) - Online site to reduce the file size of your WEBP, JPEG and PNG files. 
+[Favicon Converter](https://favicon.io/favicon-converter/) - Online site to convert the file type of WEBP, JPEG and PNG files into favicon files. 
 
 ## Testing
 
@@ -212,98 +189,21 @@ Each device has been inspected using Google Chrome developer to ensure each page
 
 ### Manual Testing 
 
-#### Navigation 
+#### Ensure that all user stories are achieved
 
-Navigation's behaviour checked on every page for every responsive breakpoints (mobile, tablet, desktop, desktop-large):
+For parents:
 
-* Click on the website's logo redirects to index.html.
+* When entering the webpage, the parent can easily see the bright,. attractive colours, images and content of the page.
+* Seeing short, clear instructions, the child can read game instructions easily.
+* The game is fun and challenging for kids. Cheerful image of the cool cat make it fun, while scores counter and timer makes it challenging.
 
-* Click on Home link redirects to index.html.  
-Homepage shows navigation bar, hero image, about section, testimonials, list of treatments, google maps and footer.
+For user:
 
-<p align="left">
-  <img src="README.docs/readme/homepage_screenshot.jpg" width="100" height="50%">
-</p>
-
-* Click on Treatment link redirects to treatments.html.  
-Treatment page shows navigation bar, hero image, pricelist and footer. 
-
-<p align="left">
-  <img src="README.docs/readme/treatment_screenshot.jpg" width="100" height="50%">
-</p>
-
-* Click on Gallery link redirects to gallery.html.
-Gallery page shows navigation bar, images of Thuy Lewis's portfolio and footer. 
-
-<p align="left">
-  <img src="README.docs/readme/gallery_screenshot.jpg" width="100" height="50%">
-</p>
-
-* Click on Contact link redirects to contact.html.
-Contact page shows navigation bar, hero image, contact details, contact form and footer.
-
-<p align="left">
-  <img src="README.docs/readme/contact_screenshot.jpg" width="100" height="50%">
-</p>
-
-Social media icons:
-
-* All icon links have target attribute set to "_blank" and open in new tab.
-* Click on Instagram icon opens new tab with Thuy Lewis Nails, Brows & Lashes profile.
-* Click on Facebook icon opens new tab with Thuy Lewis Nails, Brows & Lashes profile.
-
-#### Submit Contact Form
-
-I tested the contact form was working as I wanted. The following steps were taken during testing:
-
--Press send, with no data input. A 'Please fill in this field' tooltip warning appears on the next form box to enter information. 
-
-<p align="left">
-  <img src="README.docs/readme/testing_name.png" width="100" height="50%">
-</p>
-
--Fill name box with data, then press send. A 'Please fill in this field' tooltip warning appears on the next form box to enter information. 
-
-<p align="left">
-  <img src="README.docs/readme/testing_surname.png" width="100" height="50%">
-</p>
-
--Fill surname box with data, then press send. A 'Please fill in this field' tooltip warning appears on the next form box to enter information.
-
-<p align="left">
-  <img src="README.docs/readme/testing_email.png" width="100" height="50%">
-</p>
-
--Fill email box with data, then press send. A 'Please fill in this field' tooltip warning appears on the next form box to enter information.
-
-<p align="left">
-  <img src="README.docs/readme/testing_phone.png" width="100" height="50%">
-</p>
-
--Tested pattern="[0-9]{11} attribute for input tel. Entered 4 digits and pressed send, tooltip warning requesting to match correct format. Entered 10 digits and pressed send, tooltip warning requesting correct format. Entered 12 digits and pressed send, tooltip warning requesting correct format.
-
-<p align="left">
-  <img src="README.docs/readme/tel_pattern.png" width="150" height="70%">
-</p>
-
--Fill phone number box with correct data, then press send. A 'Please fill in this field' tooltip warning appears on the next form box to enter information.
-
-<p align="left">
-  <img src="README.docs/readme/testing_message.png" width="100" height="50%">
-</p>
-
--Fill message box with data, then press send. Redirected to confirmation page that message has been sent.
-
-<p align="left">
-  <img src="README.docs/readme/testing_confirmation.png" width="100" height="50%">
-</p>
-
--Tested the tooltip warning for an email to be entered correctly by putting in no @ symbol in email box.
-
-<p align="left">
-  <img src="README.docs/readme/testing_emailwarning.png" width="100" height="50%">
-</p>
-
+* The game is fun for kids. Images of cool cat, score counter and timer makes the game fun and challenging.
+* The Maths game is designed in bright and colourful colours.
+* Mulitple choice makes the games more focused and helpful. 
+* The images are cool and cheerful, easily capturing the user's attention
+* A score counter and timer are placed above and below the play area so that the user can see the moves and time they have made during the game.
 
 ### W3C Validator
 
@@ -334,18 +234,7 @@ I used wave (web accessibility evaluation tool) in chrome developer tools to tes
   <img src="README.docs/readme/testing_wave.png" width="100" height="50%">
 </p>
 
-### Bugs
-
-The following issues were raised during my mid project meeting with my mentor:
-- Duplicate contact form on homepage and contact page.  
-
-I removed this as if future bugs were to occur in this part of the code, there is a more likely chance of forgetting the dupicate code of the other html page and not fixing it. Saves time and future headwork. 
-
-- Be consistent with choice of colour code.  
-
-HEX was chosen colour code as it was easier and traditional to code and included the alpha parameter.
-
-### Solved Bugs
+### Bugs and issues
 
 1. Bug: Nav bar aligned to the right. 
    Fixed: Changed .mr-2 to .ml-auto
@@ -396,18 +285,18 @@ For website deployment I have decided to go with [Gitpod](https://gitpod.io) bec
 
 #### How to Fork
 
-To fork the Thuy Lewis Nails, Brows & Lashes repository:
+To fork the Catulation Countdown:
 
 1. Log in (or sign up) to Github.
-2. Go to the repository for this project, https://github.com/STRAN90/ThuyLewisNailsBrowsAndLashes.git
+2. Go to the repository for this project, 
 3. Click the Fork button in the top right corner.
 
 #### How to Clone
 
-To clone the Thuy Lewis Nails, Brows & Lashes repository:
+To clone the Catulation Countdown repository:
 
 1. Log in (or sign up) to GitHub.
-2. Go to the repository for this project, https://github.com/STRAN90/ThuyLewisNailsBrowsAndLashes.git
+2. Go to the repository for this project, https://github.com/STRAN90/Milestone-project-2.git
 3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
 4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
 5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
@@ -426,5 +315,4 @@ Media was provided by the business owner and istockphoto.com.
 
 ### Acknowledgments
 
-- My mentor Rohit Sharma for his knowledge and helpful advice. 
 - Google search engine for limitless resources about web development. 
