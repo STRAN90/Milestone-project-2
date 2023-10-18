@@ -86,13 +86,14 @@ The goal of the website is a simple addition and subtraction game, where the use
 
 ### Colour Scheme
 
-The website uses light pastel colours, I wanted to choose colours to reflect the creative personality of the business owner and the hero image used in the home page. 
+The website uses a mixture of colours thats bright and attractive, I wanted to choose colours to reflect the creative personality of the cat character and my daughter favourite colours. 
 
 ### Typography
 
 - [Google Fonts](https://fonts.google.com/)
 
-  - Used 'Roboto': "light 300" font for the website as it great for accessibility.
+  - Used 'Roboto': "light 300", sans-serif and  font for the website as it great for accessibility.
+  
 
 ### Imagery
 
