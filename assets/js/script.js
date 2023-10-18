@@ -47,13 +47,15 @@ document.getElementById("startReset").onclick = function () {
     document.getElementById("timeremainingvalue").innerHTML = timeRemaining;
     //hide game over box
     hide("gameOver");
+    hide("correct");
+    hide("incorrect");
     //change button to reset
     document.getElementById("startReset").innerHTML = "Reset Game";
 
     //start countdown
     startCountdown();
     //generate a new Q&A
-    enerateQuestion();
+    generateQuestion();
   }
 };
 
@@ -82,7 +84,7 @@ function stopCountdown() {
 // Generate random addition and subtraction questions
 function generateQuestion() {
   const minNumber = 1;
-  const maxNumber = 20;
+  const maxNumber = 50;
   let num1 = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
   let num2 = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
   const operator = Math.random() < 0.5 ? '+' : '-';
@@ -144,7 +146,7 @@ function checkAnswer(selectedAnswer) {
     score++;
     document.getElementById("scoreValue").innerHTML = score; // Update the displayed score
     currentQuestionIndex++;
-    
+
     if (currentQuestionIndex < questions.length) {
       displayQuestion(); // Display the next question
     } else {

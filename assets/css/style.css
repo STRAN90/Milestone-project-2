@@ -5,6 +5,9 @@ body {
 .heading {
   text-align: center;
   font-size: 2.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #B481D9;
+  text-shadow: 2px 2px #de401a;
 }
 
 /* Game layout */
@@ -24,6 +27,7 @@ body {
   padding: 11px;
   text-align: center;
   margin-top: 5px;
+  font-family: sans-serif;
 }
 
 #correct {
@@ -33,6 +37,7 @@ body {
   display: none;
   object-position: center;
   text-align: center;
+  font-family: sans-serif;
 }
 
 #incorrect {
@@ -43,6 +48,7 @@ body {
   display: none;
   object-position: center;
   text-align: center;
+  font-family: sans-serif;
 }
 
 #question-area {
@@ -52,8 +58,8 @@ body {
   background-color: #9DA0EA;
   font-size: 100px;
   text-align: center;
-  font-family: cursive, sans-serif;
-  color: black;
+  font-family: cursive;
+  color: #000000d1;
 }
 
 #instruction {
@@ -62,13 +68,17 @@ body {
   background-color: #B481D9;
   margin: 10px auto;
   text-align: center;
-  line-height: 45px;
+  line-height: 25px;
+  font-family: sans-serif;
+  color: rgba(255, 255, 255);
 }
 
 #answers {
-  width: 450px;
-  height: 100px;
   margin: 5px auto;
+  display: flex;
+  justify-content: center;
+  margin: 25px;
+  font-family: cursive;
 }
 
 .box {
@@ -118,6 +128,7 @@ body {
   -webkit-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
   position: relative;
+  font-family: sans-serif;
   transition: all 0.2s;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -133,6 +144,7 @@ body {
   left: 400px;
   background-color: rgba(181, 235, 36, 0.8);
   border-radius: 3px;
+  font-family: sans-serif;
   /* visibility: hidden;*/
   display: none;
 }
