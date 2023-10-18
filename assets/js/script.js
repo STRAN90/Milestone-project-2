@@ -2,7 +2,7 @@
 const questions = [];
 let score = 0;
 let playing = false;
-let timeremaining = 30;
+let timeremaining = 60;
 
 // Function to show an element by changing its display style to 'block'
 function show(elementId) {
@@ -30,7 +30,7 @@ function startGame() {
   if (!playing) {
     currentQuestionIndex = 0;
     // Reset the timer and score
-    timeremaining = 30;
+    timeremaining = 60;
     document.getElementById("timeremainingvalue").innerHTML = timeremaining;
     score = 0;
     document.getElementById("scoreValue").innerHTML = score;
@@ -181,17 +181,9 @@ function displayIncorrect() {
 
 // Function to end the game
 function endGame() {
-  // Check and update high score
-  updateHighScore();
-
   const gameOverDiv = document.getElementById('gameOver');
   gameOverDiv.textContent = 'Game Over';
   gameOverDiv.style.display = 'block';
-
-  // Update the high score when the game starts
-  document.addEventListener("DOMContentLoaded", function() {
-    displayHighScore();
-  });
 }
 
 // Start the game
@@ -199,7 +191,7 @@ function startGame() {
   currentQuestionIndex = 0;
   score = 0;
   document.getElementById("scoreValue").innerHTML = score;
-  timeremaining = 120; // Corrected reset of timeremaining
+  timeremaining = 60; // Corrected reset of timeremaining
   document.getElementById("timeremainingvalue").innerHTML = timeremaining;
   show("timeRemaining");
   hide("gameOver");
@@ -220,19 +212,3 @@ document.getElementById('startReset').addEventListener('click', () => {
   document.getElementById('gameOver').style.display = 'none';
 });
 
-// Initialize the high score from local storage
-let highScore = parseInt(localStorage.getItem("highScore")) || 0;
-
-// Function to display the high score
-function displayHighScore() {
-  document.getElementById("highScoreValue").innerHTML = highScore;
-}
-
-// Function to update the high score
-function updateHighScore() {
-  if (score > highScore) {
-    highScore = score;
-    localStorage.setItem("highScore", highScore);
-  }
-  displayHighScore();
-}
