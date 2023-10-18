@@ -109,27 +109,27 @@ Wireframes were created for mobile, tablet and desktop.
 
 The website is composed of one page. The page on the website will have:
 
--An simple and colorful page structure so that the user can easily start the game.
--"Start" button - starts the game for the user.
--Instructions of how to play.
--"Reset" button - user can reset the game and play again.
--"Game Over Feature" - after the timer reaches to 0 sec, a game over window appears showing the score the user has achieved. 
--Contact form - user can contact the game provider if they has questions or suggestions for the game.
--Footer - contains social media links. Icons were used to keep the footer clean and because they are universally recognisable. 
+- An simple and colorful page structure so that the user can easily start the game.
+- "Start" button - starts the game for the user.
+- Instructions of how to play.
+- "Reset" button - user can reset the game and play again.
+- "Game Over Feature" - after the timer reaches to 0 sec, a game over window appears showing the score the user has achieved. 
+- Contact form - user can contact the game provider if they has questions or suggestions for the game.
+- Footer - contains social media links. Icons were used to keep the footer clean and because they are universally recognisable. 
 
-  * Title. 
+  **Title** 
   Located at top of the page.  
-  * Score Area.
+  **Score Area**
   Area where the user can visually see their score each time they choose correct answer from multiply choice.   
-  * Game Area
+  **Game Area**
   This section gives instructions of how to play the game. Also where the question will appear whem the game is started. 
-  * Multiple answer choices.
+  **Multiple answer choices**
   This section shows four answers to the question at hand. Only one is correct, once the correct answer is clicked on a new question appears. 
-  * Start Game section.
+  **Start Game section**
   When the user clicks on this, the game starts by a question appearing and the timer countsdown.
-  *Contact Form. 
+  **Contact Form**
   Allows the user to contact the game provider if they has questions or suggestions for the game.
-  * Footer. 
+  **Footer**
   Contains social media links. 
 
 ### Future Implementations.
@@ -307,11 +307,16 @@ To clone the Catulation Countdown repository:
 
 ### Content
 
+Maths Game:
+
+- [Code insitute] (https://github.com/Code-Institute-Solutions/love-maths-2.0-sourcecode/tree/master) Love Maths walkthrough project
+- [Amey-Thakur] (https://github.com/Amey-Thakur/THE-MATH-GAME) - Github
+
 Content for this project was written by Sonia Majewska.
 
 ###  Media
 
-Media was provided by the business owner and istockphoto.com. 
+- Freepik - was used for background image and multiple choice answers imagery.  
 
 ### Acknowledgments
 
