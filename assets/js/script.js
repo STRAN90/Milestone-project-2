@@ -1,9 +1,8 @@
 // Define the questions array at the global scope
 const questions = [];
-
-// Declare and initialize the score variable at the global scope
 let score = 0;
 let playing = false;
+timeremaining = 60;
 
 // Function to show an element by changing its display style to 'block'
 function show(elementId) {
@@ -21,41 +20,33 @@ function hide(elementId) {
   }
 }
 
-// Wrap your code in a DOMContentLoaded event listener
-document.addEventListener("DOMContentLoaded", function() {
-  const questions = [];
-  let currentQuestionIndex = 0;
-  let playing = false; 
-  
-  document.getElementById('startReset').addEventListener('click', () => {
-    startGame();
-    document.getElementById('gameOver').style.display = 'none';
-  });
+// Wrap your code in a event listener to Start/Reset button
+document.getElementById('startReset').addEventListener('click', () => {
+  startGame();
 });
 
-document.getElementById("startReset").onclick = function () {
+function startGame() {
   // Check if 'playing' is false (not playing)
   if (!playing) {
-    // Change mode to playing
-    playing = true;
-    //set score to 0
+    currentQuestionIndex = 0;
+    // Reset the timer and score
+    timeremaining = 60;
+    document.getElementById("timeremainingvalue").innerHTML = timeremaining;
     score = 0;
     document.getElementById("scoreValue").innerHTML = score;
-    //show countdown box
+    // Change mode to playing
     show("timeRemaining");
-    timeremaining = 60;
-    document.getElementById("timeremainingvalue").innerHTML = timeRemaining;
-    //hide game over box
     hide("gameOver");
     hide("correct");
     hide("incorrect");
-    //change button to reset
     document.getElementById("startReset").innerHTML = "Reset Game";
-
-    //start countdown
     startCountdown();
-    //generate a new Q&A
-    generateQuestion();
+    questions.length = 0; // Clear previous questions
+    for (let i = 0; i < 10; i++) { // Generate 10 questions
+      questions.push(generateQuestion());
+    }
+    displayQuestion();
+    playing = true;
   } else {
     // Reset the game completely
     playing = false;
@@ -74,9 +65,10 @@ document.getElementById("startReset").onclick = function () {
 
 function startCountdown() {
   action = setInterval(function () {
-    timeremaining -= 1;
-    document.getElementById("timeremainingvalue").innerHTML = timeremaining; // Change to 'timeremaining'
-    if (timeremaining == 0) { // game over
+    if (timeremaining > 0) {
+      timeremaining -= 1;
+      document.getElementById("timeremainingvalue").innerHTML = timeremaining; // Change to 'timeremaining'
+    } else { // game over
       stopCountdown();
       show("gameOver");
       document.getElementById("gameOver").innerHTML = "<p>Game over!</p><p>Your score is " + score + ".</p>";
@@ -86,7 +78,7 @@ function startCountdown() {
       playing = false;
       document.getElementById("startReset").innerHTML = "startGame";
     }
-  }, 1000);
+  }, 1000); //Set the interval to 1000 milliseconds (1 second)
 }
 
 //stop counter
