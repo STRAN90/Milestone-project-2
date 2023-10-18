@@ -8,6 +8,14 @@
 
 /* Game layout */
 
+.background-img {
+  background-image: url("../images/sky.jpg");
+  height: 1000px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 #game-area {
   background-color: #E6ECF0;
   box-sizing: border-box;
@@ -83,6 +91,10 @@
 .box {
   width: 85px;
   height: 85px;
+  background-image: url(../images/cat.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-color: white;
   float: left;
   margin-right: 36px;
