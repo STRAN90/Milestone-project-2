@@ -56,6 +56,19 @@ document.getElementById("startReset").onclick = function () {
     startCountdown();
     //generate a new Q&A
     generateQuestion();
+  } else {
+    // Reset the game completely
+    playing = false;
+    currentQuestionIndex = 0;
+    score = 0;
+    document.getElementById("scoreValue").innerHTML = score;
+    document.getElementById("timeremainingvalue").innerHTML = timeremaining;
+    show("instruction");
+    hide("timeRemaining");
+    hide("gameOver");
+    document.getElementById("startReset").innerHTML = "Start Game";
+    // Stop countdown
+    stopCountdown();
   }
 };
 
@@ -184,6 +197,16 @@ function endGame() {
 // Start the game
 function startGame() {
   currentQuestionIndex = 0;
+  score = 0;
+  document.getElementById("scoreValue").innerHTML = score;
+  timeremaining = 60;
+  document.getElementById("timeremainingvalue").innerHTML = timeremaining;
+  show("timeRemaining");
+  hide("gameOver");
+  hide("correct");
+  hide("incorrect");
+  document.getElementById("startReset").innerHTML = "Reset Game";
+  startCountdown();
   questions.length = 0; // Clear previous questions
   for (let i = 0; i < 10; i++) { // Generate 10 questions
       questions.push(generateQuestion());
