@@ -2,7 +2,7 @@
 const questions = [];
 let score = 0;
 let playing = false;
-timeremaining = 60;
+let timeremaining = 30;
 
 // Function to show an element by changing its display style to 'block'
 function show(elementId) {
@@ -30,7 +30,7 @@ function startGame() {
   if (!playing) {
     currentQuestionIndex = 0;
     // Reset the timer and score
-    timeremaining = 60;
+    timeremaining = 30;
     document.getElementById("timeremainingvalue").innerHTML = timeremaining;
     score = 0;
     document.getElementById("scoreValue").innerHTML = score;
@@ -179,11 +179,19 @@ function displayIncorrect() {
   }, 1000);
 }
 
-// End the game
+// Function to end the game
 function endGame() {
+  // Check and update high score
+  updateHighScore();
+
   const gameOverDiv = document.getElementById('gameOver');
   gameOverDiv.textContent = 'Game Over';
   gameOverDiv.style.display = 'block';
+
+  // Update the high score when the game starts
+  document.addEventListener("DOMContentLoaded", function() {
+    displayHighScore();
+  });
 }
 
 // Start the game
@@ -191,7 +199,7 @@ function startGame() {
   currentQuestionIndex = 0;
   score = 0;
   document.getElementById("scoreValue").innerHTML = score;
-  timeremaining = 60;
+  timeremaining = 120; // Corrected reset of timeremaining
   document.getElementById("timeremainingvalue").innerHTML = timeremaining;
   show("timeRemaining");
   hide("gameOver");
@@ -201,7 +209,7 @@ function startGame() {
   startCountdown();
   questions.length = 0; // Clear previous questions
   for (let i = 0; i < 10; i++) { // Generate 10 questions
-      questions.push(generateQuestion());
+    questions.push(generateQuestion());
   }
   displayQuestion();
 }
@@ -211,3 +219,20 @@ document.getElementById('startReset').addEventListener('click', () => {
   startGame();
   document.getElementById('gameOver').style.display = 'none';
 });
+
+// Initialize the high score from local storage
+let highScore = parseInt(localStorage.getItem("highScore")) || 0;
+
+// Function to display the high score
+function displayHighScore() {
+  document.getElementById("highScoreValue").innerHTML = highScore;
+}
+
+// Function to update the high score
+function updateHighScore() {
+  if (score > highScore) {
+    highScore = score;
+    localStorage.setItem("highScore", highScore);
+  }
+  displayHighScore();
+}

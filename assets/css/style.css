@@ -1,7 +1,3 @@
-body {
-  background-color: rgb(255, 255, 255);
-}
-
 .heading {
   text-align: center;
   font-size: 2.5rem;
@@ -71,6 +67,9 @@ body {
   line-height: 25px;
   font-family: sans-serif;
   color: rgba(255, 255, 255);
+  box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
 }
 
 #answers {
@@ -92,6 +91,9 @@ body {
   text-align: center;
   position: relative;
   line-height: 80px;
+  box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.2s;
 
   -webkit-transition: all 0.2s;
@@ -145,20 +147,19 @@ body {
   background-color: rgba(181, 235, 36, 0.8);
   border-radius: 3px;
   font-family: sans-serif;
-  /* visibility: hidden;*/
   display: none;
 }
 
 #gameOver {
-  height: 200px;
-  width: 500px;
+  width: 81%;
   color: white;
+  background-color: rgb(180, 150, 179);
   font-size: 2.5em;
   text-align: center;
   text-transform: uppercase;
-  position: absolute;
-  top: 100px;
-  left: 45px;
+  position: fixed;
+  top: 200px;
   z-index: 2;
   display: none;
+  font-family: sans-serif;
 }
