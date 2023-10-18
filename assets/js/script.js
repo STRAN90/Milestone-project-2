@@ -76,7 +76,7 @@ function startCountdown() {
       hide("correct");
       hide("incorrect");
       playing = false;
-      document.getElementById("startReset").innerHTML = "startGame";
+      document.getElementById("startReset").innerHTML = "Start Game";
     }
   }, 1000); //Set the interval to 1000 milliseconds (1 second)
 }
