@@ -7,7 +7,7 @@ body {
 .heading {
   margin-top: 5%;
   text-align: center;
-  font-size: 50px;
+  font-size: 45px;
   font-family: sans-serif;
   color: #B481D9;
   text-shadow: 2px 2px #de401a;
@@ -274,4 +274,9 @@ div#confirmation p {
   color: #ffffff;
   font-size: medium;
   font-family: sans-serif;
+}
+
+@media only screen and (min-width: 740px) {
+  /* For large screens: */
+ .opening-hours {margin-top: 52px;}
 }
