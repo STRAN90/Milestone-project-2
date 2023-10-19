@@ -214,6 +214,47 @@ For user:
 * The images are cool and cheerful, easily capturing the user's attention
 * A score counter and timer are placed above and below the play area so that the user can see the moves and time they have made during the game.
 
+#### Game Starts
+
+<p align="left">
+  <img src="README.docs/startgame.png" width="100" height="50%">
+</p>
+
+* Click on START GAME button, the game starts and timer starts incrementing down by 1 second. 
+* START GAME button changes to RESET GAME. 
+* Question area appears with a sum. 
+* 4 mulitple possible answers are seen on the cool cat images boxes
+
+### Message and sound for incorrect answer
+
+<p align="left">
+  <img src="README.docs/incorrect.jpg" width="100" height="50%">
+</p>
+
+* When incorrect answer is clicked on a 'no no no' cat meow can be heard. 
+* A message saying Try again! can be seen under the scoreboard, above the question area. 
+
+### Final Product
+
+## Mobile View
+
+<p align="center">
+<img src="README.docs/mobile.png" width="700" height="500">
+</p>
+
+## Tablet Device view
+
+<p align="center">
+<img src="README.docs/tablet.png" width="700" height="500">
+</p>
+
+## Desktop view
+
+<p align="center">
+<img src="README.docs/desktop.png" width="700" height="500">
+</p>
+
+
 ### W3C Validator
 
 The W3C validator was used to validate the HTML on all pages of the website. It was also used to validate CSS in the style.css file.
