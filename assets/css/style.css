@@ -178,6 +178,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   position: fixed;
+  height: 150px;
   top: 150px;
   font-family: sans-serif;
   margin: 5%;
