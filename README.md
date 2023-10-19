@@ -191,11 +191,10 @@ Google Dev Tools - To troubleshoot and test features, solve issues with responsi
 [Tinypng](https://tinypng.com) - Online site to reduce the file size of your WEBP, JPEG and PNG files. 
 
 
-
 ## Testing
 
 Testing was ongoing throughout the entire build. I utilised Google Chrome developer tools while building to pinpoint and troubleshoot any issues as I went along.
-Each device has been inspected using Google Chrome developer to ensure each page is fully responsive on a variety of different screen sizes and devices. I have also physically tested the responsiveness of the site on a number of different devices. 
+Each device has been inspected using Google Chrome developer to ensure each page is fully responsive on a variety of different screen sizes and devices. I have also physically tested the responsiveness of the site on a number of different devices and tested the game on my daughter. 
 
 ### Manual Testing 
 
@@ -219,11 +218,8 @@ For user:
 
 The W3C validator was used to validate the HTML on all pages of the website. It was also used to validate CSS in the style.css file.
 
-* [Index Page HTML](README.docs/readme/html_index.png)
-* [Treatments Page HTML](README.docs/readme/html_treatments.png)
-* [Gallery Page HTML](README.docs/readme/html_treatments.png)
-* [Contact Page HTML](README.docs/readme/html_treatments.png)
-* [W3C CSS Validator](README.docs/readme/w3c_css_validator.png)
+* [Webpage HTML](README.docs/w3c.png)
+* [Webpage CSS] (README.docs/w3c_css.png)
 
 ### Lighthouse
 
@@ -234,35 +230,12 @@ I used lighthouse to test each of the pages for:
 - Best practices - how does the site conform to industry best practices.
 - SEO - search engine optimization. Is the site optimized for search engine result rankings.
 
-Results can be accessed by this [link](https://pagespeed.web.dev/analysis/https-stran90-github-io-Milestone-project-2/d98xvb29r8?form_factor=mobile)
+Results can be accessed by this [link](https://pagespeed.web.dev/analysis/https-stran90-github-io-Milestone-project-2/wdxno1ft9s?form_factor=mobile)
 
-### Wave
-
-I used wave (web accessibility evaluation tool) in chrome developer tools to test the website accessibility. Scanned website for on-page and technical accessibility issues and errors to bring site in line with recognized accessibility standards, like the Web Content Accessibility Guidelines (WCAG).
-
-<p align="left">
-  <img src="README.docs/readme/testing_wave.png" width="100" height="50%">
-</p>
 
 ### Bugs and issues
 
-1. Bug: Nav bar aligned to the right. 
-   Fixed: Changed .mr-2 to .ml-auto
-
-2. Error: Bad value 100% for attribute width on element img: Expected a digit but saw % instead.
-  From line 39, column 17; to line 39, column 147
-
-          <img src="assets/css/images/Homepage/hero_image.jpg" class="hero-image" alt="finished french style rainbow tip nails" width="100%"↩
-
-Fix: Removing width from img element in index.html and setting CSS rule of width=100% to hero-image class attribute in the style.css. 
-
-3. Error: Bad value 100% for attribute width on element img: Expected a digit but saw % instead.
-
-From line 65, column 25; to line 65, column 125
-
-          <img src="assets/css/images/Homepage/in_action.jpg" alt="Photo of Thuy Lewis in action" width="100%">↩  
-
-Fix: Removing width from img element in index.html and setting CSS rule of width=100% to thuy-lewis id attribute in the style.css. 
+1. 
 
 ## Deployment & Local Development 
 
