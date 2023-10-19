@@ -188,6 +188,10 @@ Google Dev Tools - To troubleshoot and test features, solve issues with responsi
 
 [Favicon Converter](https://favicon.io/favicon-converter/) - Online site to convert the file type of WEBP, JPEG and PNG files into favicon files. 
 
+[Tinypng](https://tinypng.com) - Online site to reduce the file size of your WEBP, JPEG and PNG files. 
+
+
+
 ## Testing
 
 Testing was ongoing throughout the entire build. I utilised Google Chrome developer tools while building to pinpoint and troubleshoot any issues as I went along.
@@ -230,7 +234,7 @@ I used lighthouse to test each of the pages for:
 - Best practices - how does the site conform to industry best practices.
 - SEO - search engine optimization. Is the site optimized for search engine result rankings.
 
-Results can be accessed by this [link](https://pagespeed.web.dev/analysis/https-stran90-github-io-ThuyLewisNailsBrowsAndLashes/xpjvqfahm8?form_factor=mobile)
+Results can be accessed by this [link](https://pagespeed.web.dev/analysis/https-stran90-github-io-Milestone-project-2/d98xvb29r8?form_factor=mobile)
 
 ### Wave
 

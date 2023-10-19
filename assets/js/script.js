@@ -60,7 +60,7 @@ function updateTimer() {
         hide("correct");
         hide("incorrect");
         playing = false;
-        document.getElementById("startReset").innerHTML = "Start Game";
+        document.getElementById("startReset").innerHTML = "START GAME";
     }
 }
 
@@ -80,7 +80,7 @@ function startGame() {
     hide("gameOver");
     hide("correct");
     hide("incorrect");
-    document.getElementById("startReset").innerHTML = "Reset Game";
+    document.getElementById("startReset").innerHTML = "RESET GAME";
     stopCountdown(); // Ensure any previous countdown is stopped
     startCountdown();
     questions.length = 0; // Clear previous questions
