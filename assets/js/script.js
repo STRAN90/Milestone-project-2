@@ -184,7 +184,7 @@ function displayCorrect() {
 function displayIncorrect() {
   const incorrectDiv = document.getElementById('incorrect');
   incorrectDiv.style.display = 'block';
-  playSound("assets/sounds/no_meow.mp3")
+  playSound("assets/sounds/no_meow.mp3");
   setTimeout(() => {
       incorrectDiv.style.display = 'none';
   }, 1000);
