@@ -127,7 +127,7 @@ The website is composed of one page. The page on the website will have:
 - This section gives instructions of how to play the game. Also where the question will appear whem the game is started. 
 
 **Multiple answer choices**
-- This section shows four answers to the question at hand. Only one is correct, once the correct answer is clicked on a new question appears. 
+- This section shows four answers to the question at hand. Only one is correct, once the correct answer is clicked on a new question appears. A different cat noise sounds for incorrect or correct answer choosen. 
 
 **Start Game section**
 - When the user clicks on this, the game starts by a question appearing and the timer countsdown.
@@ -235,7 +235,33 @@ Results can be accessed by this [link](https://pagespeed.web.dev/analysis/https-
 
 ### Bugs and issues
 
-1. 
+1. The timer was decreasing too quickly and not at the correct interval. 
+
+function startCountdown() {
+  timerInterval = setInterval(function () {
+    if (timeremaining > 0) {
+      timeremaining -= 1;
+      document.getElementById("timeremainingvalue").innerHTML = timeremaining;
+    } else { // Game over
+      stopCountdown();
+      show("gameOver");
+      document.getElementById("gameOver").innerHTML = "<p>Game over!</p><p>Your score is " + score + ".</p>";
+      hide("timeremaining");
+      hide("correct");
+      hide("incorrect");
+      playing = false;
+      document.getElementById("startReset").innerHTML = "Start Game";
+    }
+  }, 1000);
+}
+
+//stop counter
+function stopCountdown() {
+    clearInterval(action);
+}
+
+- Fixed this issue by implenting the startCountdown near the beginning of the code and changing the code so it calculates the remaining time based on the elapsed time since the start of the countdown. This approach should provide a more accurate timer. 
+
 
 ## Deployment & Local Development 
 
