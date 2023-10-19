@@ -13,7 +13,7 @@ I have designed the website to look child friendly as its main focus. It is desi
 The goal of the website is a simple addition and subtraction game, where the user is played against a timer with a multiple choice answers. 
 
 
-**Link to website** [here](![Alt text](https://stran90.github.io/Milestone-project-2/)).
+**Link to website** [here](https://stran90.github.io/Milestone-project-2/).
 
 ---
 
