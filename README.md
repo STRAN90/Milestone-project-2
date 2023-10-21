@@ -226,7 +226,7 @@ For user:
 #### Game Starts
 
 <p align="left">
-  <img src="README.docs/startgame.png" width="70%" height="70%">
+  <img src="README.docs/startgame.png" width="50%" height="50%">
 </p>
 
 * Click on START GAME button, the game starts and timer starts incrementing down by 1 second. 
@@ -237,7 +237,7 @@ For user:
 ### Message and sound for incorrect answer
 
 <p align="left">
-  <img src="README.docs/incorrect.jpg" width="70%" height="70%">
+  <img src="README.docs/incorrect.jpg" width="50%" height="50%">
 </p>
 
 * When incorrect answer is clicked on a 'noo' cat meow can be heard. 
@@ -246,7 +246,7 @@ For user:
 ### Meassage and sound for correct answer
 
 <p align="left">
-  <img src="README.docs/correct.jpg" width="70%" height="70%">
+  <img src="README.docs/correct.jpg" width="50%" height="50%">
 </p>
 
 * When correct answer is clicked on a cat meow can be heard (different from the other cat sound for incorrect). 
@@ -255,7 +255,7 @@ For user:
 ### RESET GAME button
 
 <p align="left">
-  <img src="README.docs/reset.jpg" width="70%" height="70%">
+  <img src="README.docs/reset.jpg" width="50%" height="50%">
 </p>
 
 * When the RESET GAME is clicked on, a window message appears for the user to confirm they want to reset the game. 
@@ -265,7 +265,7 @@ For user:
 ### Game over message
 
 <p align="left">
-  <img src="README.docs/gameover.jpg" width="70%" height="70%%">
+  <img src="README.docs/gameover.jpg" width="50%" height="50%">
 </p>
 
 * When the timer increments down to 0 seconds, a message appears to tell the user the game is over and shows them how many correct answers they have score. 
