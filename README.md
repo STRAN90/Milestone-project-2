@@ -190,6 +190,7 @@ Google Dev Tools - To troubleshoot and test features, solve issues with responsi
 
 [Tinypng](https://tinypng.com) - Online site to reduce the file size of your WEBP, JPEG and PNG files. 
 
+[JSHINT] (https://jshint.com/) - A Static Code Analysis Tool for JavaScript
 
 ## Testing
 
