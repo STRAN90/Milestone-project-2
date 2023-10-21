@@ -86,6 +86,10 @@ The goal of the website is a simple addition and subtraction game, where the use
 
 ### Colour Scheme
 
+<p align="center">
+<img src="README.docs/colour.png" width="900" height="250">
+</p>
+
 The website uses a mixture of colours thats bright and attractive, I wanted to choose colours to reflect the creative personality of the cat character and my daughter favourite colours. 
 
 ### Typography
@@ -97,7 +101,7 @@ The website uses a mixture of colours thats bright and attractive, I wanted to c
 
 ### Imagery
 
-Image was used from Freepik.com 
+Images were used from Freepik.com 
 
 ### Wireframes
 
@@ -107,9 +111,9 @@ Wireframes were created for mobile, tablet and desktop.
 
 ### Features
 
-The website is composed of one page. The page on the website will have:
+The maths game is composed of one webpage. The page on the website will have:
 
-- An simple and colorful page structure so that the user can easily start the game.
+- An simple and colourful page structure so that the user can easily start the game.
 - "Start" button - starts the game for the user.
 - Instructions of how to play.
 - "Reset" button - user can reset the game and play again.
@@ -124,13 +128,15 @@ The website is composed of one page. The page on the website will have:
 - Area where the user can visually see their score each time they choose correct answer from multiply choice.   
 
 **Game Area**
-- This section gives instructions of how to play the game. Also where the question will appear whem the game is started. 
+- This section gives instructions of how to play the game. Also where the question will appear when the game is started. 
 
 **Multiple answer choices**
 - This section shows four answers to the question at hand. Only one is correct, once the correct answer is clicked on a new question appears. A different cat noise sounds for incorrect or correct answer choosen. 
 
 **Start Game section**
-- When the user clicks on this, the game starts by a question appearing and the timer countsdown.
+- When the user clicks on this, the game starts by a question appearing and the timer counts down from 60 seconds.
+- After the game has started, this button changes to RESET GAME. 
+- If user clicks on the RESET GAME button, a window message appears to let user know if they want to confirm to rest game or cancel. 
 
 **Contact Form**
 - Allows the user to contact the game provider if they has questions or suggestions for the game.
@@ -140,7 +146,7 @@ The website is composed of one page. The page on the website will have:
 
 ### Future Implementations.
 
-  * Add more levels to increase difficulty, for example larger sums or division and multiplication levels. 
+  * Add more levels to increase difficulty. For example, larger sums or division and multiplication levels. 
   * Send email notification to user once form has been submitted. 
   * Background soundtrack for the game, to engage the user more. 
 
@@ -190,7 +196,9 @@ Google Dev Tools - To troubleshoot and test features, solve issues with responsi
 
 [Tinypng](https://tinypng.com) - Online site to reduce the file size of your WEBP, JPEG and PNG files. 
 
-[JSHINT] (https://jshint.com/) - A Static Code Analysis Tool for JavaScript
+[JSHINT](https://jshint.com/) - A Static Code Analysis Tool for JavaScript. 
+
+[Coolors](https://coolors.co/) - Colour palettes generator. 
 
 ## Testing
 
@@ -205,7 +213,7 @@ For parents:
 
 * When entering the webpage, the parent can easily see the bright,. attractive colours, images and content of the page.
 * Seeing short, clear instructions, the child can read game instructions easily.
-* The game is fun and challenging for kids. Cheerful image of the cool cat make it fun, while scores counter and timer makes it challenging.
+* The game is fun and challenging for kids. Cheerful image of the cool cat make it fun, while score counter and timer makes it challenging.
 
 For user:
 
@@ -213,7 +221,7 @@ For user:
 * The Maths game is designed in bright and colourful colours.
 * Mulitple choice makes the games more focused and helpful. 
 * The images are cool and cheerful, easily capturing the user's attention
-* A score counter and timer are placed above and below the play area so that the user can see the moves and time they have made during the game.
+* A score counter and timer are placed above and below the play area so that the user can see their score and time left they have during the game.
 
 #### Game Starts
 
@@ -232,27 +240,54 @@ For user:
   <img src="README.docs/incorrect.jpg" width="100" height="50%">
 </p>
 
-* When incorrect answer is clicked on a 'no no no' cat meow can be heard. 
+* When incorrect answer is clicked on a 'noo' cat meow can be heard. 
 * A message saying Try again! can be seen under the scoreboard, above the question area. 
+
+### Meassage and sound for correct answer
+
+<p align="left">
+  <img src="README.docs/correct.jpg" width="100" height="50%">
+</p>
+
+* When correct answer is clicked on a cat meow can be heard (different from the other cat sound for incorrect). 
+* A message saying Correct! can be seen under the scoreboard, above the question area. 
+
+### RESET GAME button
+
+<p align="left">
+  <img src="README.docs/reset.jpg" width="100" height="50%">
+</p>
+
+* When the RESET GAME is clicked on, a window message appears for the user to confirm they want to reset the game. 
+* If the user clicks on "Ok", the game restarts. 
+* If the user clicks on "cancel", the action is cancelled and the current games resumes. 
+
+### Game over message
+
+<p align="left">
+  <img src="README.docs/gameover.jpg" width="100" height="50%">
+</p>
+
+* When the timer increments down to 0 seconds, a message appears to tell the user the game is over and shows them how many correct answers they have score. 
 
 ### Final Product
 
 ## Mobile View
 
 <p align="center">
-<img src="README.docs/mobile.png" width="700" height="500">
+<img src="README.docs/mobile.png" width="100" height="50%">
 </p>
 
 ## Tablet Device view
 
 <p align="center">
-<img src="README.docs/tablet.png" width="700" height="500">
+<img src="README.docs/tablet.png" width="100" height="50%">
 </p>
 
 ## Desktop view
 
 <p align="center">
-<img src="README.docs/desktop.png" width="700" height="500">
+<img src="README.docs/desktop.png" width="100" height="50%">
 </p>
 
 
