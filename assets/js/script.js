@@ -4,8 +4,10 @@ var score = 0;
 var playing = false;
 var timeremaining = 60;
 var canPlaySound = true;
-var action;
 var startTime; // Variable to store the start time
+var currentQuestionIndex = 0;
+var gameIsOver = true;
+var timerInterval;
 
 /* Function to play sound */
 function playSound(audioURL) {
@@ -37,63 +39,63 @@ document.getElementById('startReset').addEventListener('click', function() {
 });
 
 /* Function to start/update/stop countdown timer */
-var timerInterval;
-
 function startCountdown() {
-    startTime = new Date().getTime(); // Store the start time
-    updateTimer(); // Initial timer display
-    var interval = 1000; // Update the timer every second
+    var startTime = new Date().getTime();
+
+    function updateTimer() {
+        var currentTime = new Date().getTime();
+        var elapsedSeconds = Math.floor((currentTime - startTime) / 1000);
+        var remainingSeconds = timeremaining - elapsedSeconds;
+    
+        if (remainingSeconds > 0) {
+            document.getElementById("timeremainingvalue").innerHTML = remainingSeconds;
+        } else {
+            stopCountdown();
+            if (!gameIsOver) {
+                show("gameOver");
+                document.getElementById("gameOver").innerHTML = "<p>Game over!</p><p>Your score is " + score + ".</p>";
+                hide("timeremaining");
+                hide("correct");
+                hide("incorrect");
+                setAnswerButtonsEnabled(false); // Disable answer buttons when the timer ends
+                gameIsOver = true; // Set the game state to "over"
+            }
+            document.getElementById("startReset").innerHTML = "START GAME";
+        }
+    }
+    
+    var interval = 1000;
     timerInterval = setInterval(updateTimer, interval);
 }
 
-function updateTimer() {
-    var currentTime = new Date().getTime();
-    var elapsedSeconds = Math.floor((currentTime - startTime) / 1000);
-    var remainingSeconds = timeremaining - elapsedSeconds;
-
-    if (remainingSeconds > 0) {
-        document.getElementById("timeremainingvalue").innerHTML = remainingSeconds;
-    } else {
-        stopCountdown();
-
-        if (playing) {
-            show("gameOver");
-            document.getElementById("gameOver").innerHTML = "<p>Game over!</p><p>Your score is " + score + ".</p>";
-            hide("timeremaining");
-            hide("correct");
-            hide("incorrect");
-            playing = false;
-        }
-
-        document.getElementById("startReset").innerHTML = "START GAME";
-    }
-}
-
 function stopCountdown() {
-    clearInterval(timerInterval);
+    clearInterval(timerInterval); 
 }
 
 /* Function to start the game */
 function startGame() {
-    currentQuestionIndex = 0;
-    score = 0;
-    timeremaining = 60;
-    document.getElementById("scoreValue").innerHTML = score;
-    document.getElementById("timeremainingvalue").innerHTML = timeremaining;
-    show("timeRemaining");
-    hide("gameOver");
-    hide("correct");
-    hide("incorrect");
-    document.getElementById("startReset").innerHTML = "RESET GAME";
-    stopCountdown(); // Ensure any previous countdown is stopped
-    startCountdown();
-    questions.length = 0; // Clear previous questions
-    for (var i = 0; i < 10; i++) {
+    if (gameIsOver) {
+      gameIsOver = false;
+      currentQuestionIndex = 0;
+      score = 0;
+      timeremaining = 60;
+      document.getElementById("scoreValue").innerHTML = score;
+      document.getElementById("timeremainingvalue").innerHTML = timeremaining;
+      show("timeRemaining");
+      hide("gameOver");
+      hide("correct");
+      hide("incorrect");
+      document.getElementById("startReset").innerHTML = "RESET GAME";
+      stopCountdown();
+      questions.length = 0;
+      for (var i = 0; i < 10; i++) {
         questions.push(generateQuestion());
+      }
+      displayQuestion();
+      startCountdown();
+      setAnswerButtonsEnabled(true); // Enable the answer buttons when the game starts
     }
-    playing = true; // Set the game state to "playing"
-    displayQuestion();
-}
+  }
 
 /* Function to generate random addition and subtraction questions */
 function generateQuestion() {
@@ -173,7 +175,8 @@ function shuffleArray(array) {
 /* Check if the selected answer is correct */
 function checkAnswer(selectedAnswer) {
     var question = questions[currentQuestionIndex];
-    if (selectedAnswer === question.answer) {
+    if (!gameIsOver) {
+      if (selectedAnswer === question.answer) {
         // Correct answer: Increase the score
         score++;
         document.getElementById("scoreValue").innerHTML = score; // Update the displayed score
@@ -188,6 +191,19 @@ function checkAnswer(selectedAnswer) {
     } else {
         displayIncorrect();
     }
+  }
+}
+
+function displayCorrect() {
+    var correctDiv = document.getElementById('correct');
+    correctDiv.style.display = 'block'; // Make the "Correct!" message visible
+
+    // Use a named function for the setTimeout callback
+    function hideCorrectDiv() {
+        correctDiv.style.display = 'none'; // Hide the message after a certain time (e.g., 1 second)
+    }
+
+    setTimeout(hideCorrectDiv, 1000);
 }
 
 /* Function to display correct or try again message */
@@ -218,10 +234,19 @@ function displayIncorrect() {
 
 /* Function to end the game */
 function endGame() {
-    var gameOverDiv = document.getElementById('gameOver');
-    gameOverDiv.innerHTML = 'Game Over';
-    gameOverDiv.style.display = 'block';
-}
+      var gameOverDiv = document.getElementById('gameOver');
+      gameOverDiv.innerHTML = 'Game Over';
+      gameOverDiv.style.display = 'block';
+      setAnswerButtonsEnabled(false); // Disable the answer buttons when the game ends
+    }
+
+/* Function to set the answer buttons' enabled/disabled state */
+function setAnswerButtonsEnabled(enabled) {
+    var answerButtons = document.getElementsByClassName('answer-button');
+    for (var i = 0; i < answerButtons.length; i++) {
+      answerButtons[i].style.pointerEvents = enabled ? 'auto' : 'none';
+    }
+  }
 
 /* Define a click event handler function for the Start/Reset button */
 function handleClick() {
@@ -230,4 +255,8 @@ function handleClick() {
 }
 
 // Add the click event listener using the handler function
-document.getElementById('startReset').addEventListener('click', handleClick);
+document.getElementById('startReset').addEventListener('click', function() {
+  if (!playing) {
+      startGame();
+  }
+});
