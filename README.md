@@ -200,6 +200,8 @@ Google Dev Tools - To troubleshoot and test features, solve issues with responsi
 
 [Coolors](https://coolors.co/) - Colour palettes generator. 
 
+[Beautify](https://www.jpkc.com/tools/beautify/) - Online site to beautify html, css and Javascript codes.
+
 ## Testing
 
 Testing was ongoing throughout the entire build. I utilised Google Chrome developer tools while building to pinpoint and troubleshoot any issues as I went along.
