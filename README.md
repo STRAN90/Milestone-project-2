@@ -275,7 +275,7 @@ For user:
 ## Mobile View
 
 <p align="center">
-<img src="README.docs/mobile.png" width="50%" height="50%">
+<img src="README.docs/mobile.jpg" width="50%" height="50%">
 </p>
 
 ## Tablet Device view
