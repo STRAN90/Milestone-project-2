@@ -296,7 +296,7 @@ For user:
 The W3C validator was used to validate the HTML on all pages of the website. It was also used to validate CSS in the style.css file.
 
 * [Webpage HTML](README.docs/w3c.png)
-* [Webpage CSS] (README.docs/w3c_css.png)
+* [Webpage CSS](README.docs/w3c_css.png)
 
 ### Lighthouse
 
@@ -307,38 +307,26 @@ I used lighthouse to test each of the pages for:
 - Best practices - how does the site conform to industry best practices.
 - SEO - search engine optimization. Is the site optimized for search engine result rankings.
 
-Results can be accessed by this [link](https://pagespeed.web.dev/analysis/https-stran90-github-io-Milestone-project-2/wdxno1ft9s?form_factor=mobile)
+Results can be accessed by this [link](https://pagespeed.web.dev/analysis/https-stran90-github-io-Milestone-project-2/29eflnzxjo?form_factor=mobile)
 
 
 ### Bugs and issues
 
 1. The timer was decreasing too quickly and not at the correct interval. 
 
-function startCountdown() {
-  timerInterval = setInterval(function () {
-    if (timeremaining > 0) {
-      timeremaining -= 1;
-      document.getElementById("timeremainingvalue").innerHTML = timeremaining;
-    } else { // Game over
-      stopCountdown();
-      show("gameOver");
-      document.getElementById("gameOver").innerHTML = "<p>Game over!</p><p>Your score is " + score + ".</p>";
-      hide("timeremaining");
-      hide("correct");
-      hide("incorrect");
-      playing = false;
-      document.getElementById("startReset").innerHTML = "Start Game";
-    }
-  }, 1000);
-}
-
-//stop counter
-function stopCountdown() {
-    clearInterval(action);
-}
+<p align="center">
+<img src="README.docs/timer.png" width="50%" height="50%">
+</p>
 
 - Fixed this issue by implenting the startCountdown near the beginning of the code and changing the code so it calculates the remaining time based on the elapsed time since the start of the countdown. This approach should provide a more accurate timer. 
 
+2. Timer keeps stopping at 1sec not 0sec. 
+
+<p align="center">
+<img src="README.docs/timerbug.png" width="50%" height="50%">
+</p>
+
+- Bug seen due to the interval timing. To ensure the timer displays 0 seconds when the game is over a small adjustment was made to the code. Bug fixed by clearing the interval when the timer reaches 0 seconds, by clearing the timerInterval when the game is reset. 
 
 ## Deployment & Local Development 
 
@@ -407,4 +395,5 @@ Content for this project was written by Sonia Majewska.
 
 ### Acknowledgments
 
+- My mentor Rohit Sharma for his knowledge and helpful advice. 
 - Google search engine for limitless resources about web development. 
