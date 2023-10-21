@@ -36,7 +36,7 @@ document.getElementById('startReset').addEventListener('click', function() {
     startGame();
 });
 
-/* Function to start countdown */
+/* Function to start/update/stop countdown timer */
 var timerInterval;
 
 function startCountdown() {
@@ -50,18 +50,27 @@ function updateTimer() {
     var currentTime = new Date().getTime();
     var elapsedSeconds = Math.floor((currentTime - startTime) / 1000);
     var remainingSeconds = timeremaining - elapsedSeconds;
-    if(remainingSeconds > 0) {
+
+    if (remainingSeconds > 0) {
         document.getElementById("timeremainingvalue").innerHTML = remainingSeconds;
     } else {
         stopCountdown();
-        show("gameOver");
-        document.getElementById("gameOver").innerHTML = "<p>Game over!</p><p>Your score is " + score + ".</p>";
-        hide("timeremaining");
-        hide("correct");
-        hide("incorrect");
-        playing = false;
+
+        if (playing) {
+            show("gameOver");
+            document.getElementById("gameOver").innerHTML = "<p>Game over!</p><p>Your score is " + score + ".</p>";
+            hide("timeremaining");
+            hide("correct");
+            hide("incorrect");
+            playing = false;
+        }
+
         document.getElementById("startReset").innerHTML = "START GAME";
     }
+}
+
+function stopCountdown() {
+    clearInterval(timerInterval);
 }
 
 /* Function to start the game */
@@ -82,9 +91,9 @@ function startGame() {
     for (var i = 0; i < 10; i++) {
         questions.push(generateQuestion());
     }
+    playing = true; // Set the game state to "playing"
     displayQuestion();
 }
-
 
 /* Function to generate random addition and subtraction questions */
 function generateQuestion() {
@@ -125,6 +134,18 @@ function displayQuestion() {
     document.getElementById('question-area').textContent = question.text;
     var answers = [];
     
+    // Generate a list of unique answer choices including the correct answer
+    answers.push(question.answer);
+    while (answers.length < 4) {
+        var randomAnswer = Math.floor(Math.random() * 40);
+        if (!answers.includes(randomAnswer)) {
+            answers.push(randomAnswer);
+        }
+    }
+
+    // Shuffle the answer choices for a random order
+    answers = shuffleArray(answers);
+    
     function createClickHandler(answer) {
         return function () {
             checkAnswer(answer);
@@ -132,16 +153,21 @@ function displayQuestion() {
     }
     
     for (var i = 0; i < 4; i++) {
-        var randomAnswer;
-        do {
-            randomAnswer = Math.floor(Math.random() * 40);
-        } while (answers.includes(randomAnswer) || randomAnswer === question.answer);
-        answers.push(randomAnswer);
-
         var box = document.getElementById('box' + (i + 1));
         box.textContent = answers[i];
         box.onclick = createClickHandler(answers[i]);
     }
+}
+
+// Function to shuffle an array (Fisher-Yates shuffle algorithm)
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
 }
 
 /* Check if the selected answer is correct */
