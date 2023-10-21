@@ -87,7 +87,7 @@ The goal of the website is a simple addition and subtraction game, where the use
 ### Colour Scheme
 
 <p align="center">
-<img src="README.docs/colour.png" width="900" height="250">
+<img src="README.docs/colour.png" width="60%" height="60%">
 </p>
 
 The website uses a mixture of colours thats bright and attractive, I wanted to choose colours to reflect the creative personality of the cat character and my daughter favourite colours. 
@@ -226,7 +226,7 @@ For user:
 #### Game Starts
 
 <p align="left">
-  <img src="README.docs/startgame.png" width="100" height="50%">
+  <img src="README.docs/startgame.png" width="70%" height="70%">
 </p>
 
 * Click on START GAME button, the game starts and timer starts incrementing down by 1 second. 
@@ -237,7 +237,7 @@ For user:
 ### Message and sound for incorrect answer
 
 <p align="left">
-  <img src="README.docs/incorrect.jpg" width="100" height="50%">
+  <img src="README.docs/incorrect.jpg" width="70%" height="70%">
 </p>
 
 * When incorrect answer is clicked on a 'noo' cat meow can be heard. 
@@ -246,7 +246,7 @@ For user:
 ### Meassage and sound for correct answer
 
 <p align="left">
-  <img src="README.docs/correct.jpg" width="100" height="50%">
+  <img src="README.docs/correct.jpg" width="70%" height="70%">
 </p>
 
 * When correct answer is clicked on a cat meow can be heard (different from the other cat sound for incorrect). 
@@ -255,7 +255,7 @@ For user:
 ### RESET GAME button
 
 <p align="left">
-  <img src="README.docs/reset.jpg" width="100" height="50%">
+  <img src="README.docs/reset.jpg" width="70%" height="70%">
 </p>
 
 * When the RESET GAME is clicked on, a window message appears for the user to confirm they want to reset the game. 
@@ -265,7 +265,7 @@ For user:
 ### Game over message
 
 <p align="left">
-  <img src="README.docs/gameover.jpg" width="100" height="50%">
+  <img src="README.docs/gameover.jpg" width="70%" height="70%%">
 </p>
 
 * When the timer increments down to 0 seconds, a message appears to tell the user the game is over and shows them how many correct answers they have score. 
