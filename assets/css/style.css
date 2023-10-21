@@ -172,9 +172,9 @@ body {
   font-size: 30px;
   text-align: center;
   text-transform: uppercase;
-  position: fixed;
-  height: 150px;
-  top: 150px;
+  position: absolute;
+  height: 30%;
+  top: 28%;
   font-family: sans-serif;
   margin: 5%;
   display: none;

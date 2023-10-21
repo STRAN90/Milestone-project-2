@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             answer = firstNum - secondNum ;
         }
-        var questionText = firstNum + ' ' + operator + ' ' + secondNum ;
+        var questionText = firstNum + ' ' + operator + ' ' + secondNum;
         // Ensure the answer is a positive integer
         if(answer < 0) {
             return generateQuestion();
