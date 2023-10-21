@@ -173,10 +173,10 @@ body {
   text-align: center;
   text-transform: uppercase;
   position: absolute;
-  height: 30%;
+  height: 23%;
   top: 28%;
   font-family: sans-serif;
-  margin: 5%;
+  margin: inherit;
   display: none;
 }
 
