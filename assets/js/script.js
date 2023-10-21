@@ -125,22 +125,22 @@ document.addEventListener("DOMContentLoaded", function () {
     function generateQuestion() {
         var minNumber = 1;
         var maxNumber = 50;
-        var num1 = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+        var firstNum = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
         var operator = Math.random() < 0.5 ? '+' : '-';
         var answer;
-        var num2 = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+        var secondNum = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
         if(operator === '+') {
-            answer = num1 + num2;
+            answer = firstNum + secondNum ;
         } else {
             // Ensure there are no negative answers
-            if(num1 < num2) {
-                var temp = num1;
-                num1 = num2;
-                num2 = temp;
+            if(firstNum < secondNum ) {
+                var temp = firstNum;
+                firstNum = secondNum ;
+                secondNum  = temp;
             }
-            answer = num1 - num2;
+            answer = firstNum - secondNum ;
         }
-        var questionText = num1 + ' ' + operator + ' ' + num2;
+        var questionText = firstNum + ' ' + operator + ' ' + secondNum ;
         // Ensure the answer is a positive integer
         if(answer < 0) {
             return generateQuestion();
@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
         startGame();
         document.getElementById('gameOver').style.display = 'none';
     }
-    
+
     // Add the click event listener using the handler function
     document.getElementById('startReset').addEventListener('click', function () {
         if(!playing) {
