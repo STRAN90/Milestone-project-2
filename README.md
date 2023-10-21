@@ -275,19 +275,19 @@ For user:
 ## Mobile View
 
 <p align="center">
-<img src="README.docs/mobile.png" width="100" height="50%">
+<img src="README.docs/mobile.png" width="50%" height="50%">
 </p>
 
 ## Tablet Device view
 
 <p align="center">
-<img src="README.docs/tablet.png" width="100" height="50%">
+<img src="README.docs/tablet.png" width="50%" height="50%">
 </p>
 
 ## Desktop view
 
 <p align="center">
-<img src="README.docs/desktop.png" width="100" height="50%">
+<img src="README.docs/desktop.png" width="50%" height="50%">
 </p>
 
 
