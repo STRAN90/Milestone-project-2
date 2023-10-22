@@ -257,22 +257,6 @@ a:hover {
   color: #dc99d0;
 }
 
-/* CONFIRMATION.HTML */
-
-div#confirmation p {
-  text-align: center;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-#message {
-  margin-top: 100%;
-  margin-bottom: 1rem;
-  color: #ffffff;
-  font-size: medium;
-  font-family: sans-serif;
-}
-
 @media only screen and (min-width: 740px) {
   /* For large screens: */
  .opening-hours {margin-top: 52px;}
