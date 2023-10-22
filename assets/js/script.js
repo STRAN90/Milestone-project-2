@@ -7,7 +7,10 @@ let canPlaySound = true;
 let currentQuestionIndex = 0;
 let gameIsOver = true;
 let timerInterval;
+let startResetButton = document.getElementById('startReset');
+let question = questions[currentQuestionIndex];
 
+let element = document.getElementById(elementId);
 /**  Function to play sound */
 function playSound(audioURL) {
     if(canPlaySound === true) {
@@ -18,7 +21,6 @@ function playSound(audioURL) {
 
 /** Function to show an element by changing its display style to 'block' */
 function show(elementId) {
-const element = document.getElementById(elementId);
     if(element) {
         element.style.display = 'block';
     }
@@ -26,24 +28,10 @@ const element = document.getElementById(elementId);
 
 /** Function to hide an element by changing its display style to 'none' */
 function hide(elementId) {
-const element = document.getElementById(elementId);
     if(element) {
         element.style.display = 'none';
     }
 }
-
-// Get the Start/Reset button element and add an event listener
-const startResetButton = document.getElementById('startReset');
-    startResetButton.addEventListener('click', function () {
-        if(!gameIsOver) {
-            let shouldReset = confirm("Are you sure you want to reset the game?");
-            if(shouldReset) {
-                resetGame();
-            }
-        } else {
-            startGame();
-        }
-    });
 
 /** Function to reset the game */
 function resetGame() {
@@ -151,7 +139,6 @@ function generateQuestion() {
 
 /** Function to display a question and answer choices */
 function displayQuestion() {
-    const question = questions[currentQuestionIndex];
     document.getElementById('question-area').textContent = question.text;
     let answers = [];
     // Generate a list of unique answer choices including the correct answer
@@ -190,7 +177,6 @@ function shuffleArray(array) {
 
 /** Function to check if the selected answer is correct */
 function checkAnswer(selectedAnswer) {
-    const question = questions[currentQuestionIndex];
     if(!gameIsOver) {
         if(selectedAnswer === question.answer) {
             // Correct answer: Increase the score
@@ -255,6 +241,18 @@ function setAnswerButtonsEnabled(enabled) {
     }
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Get the Start/Reset button element and add an event listener
+    startResetButton.addEventListener('click', function () {
+        if(!gameIsOver) {
+            let shouldReset = confirm("Are you sure you want to reset the game?");
+            if(shouldReset) {
+                resetGame();
+            }
+        } else {
+            startGame();
+        }
+    });
+
     // Add the click event listener using the handler function
     document.getElementById('startReset').addEventListener('click', function () {
         if(!playing) {
