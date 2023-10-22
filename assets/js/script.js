@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var gameIsOver = true;
     var timerInterval;
 
-    // Function to play sound
+    /**  Function to play sound */
     function playSound(audioURL) {
         if(canPlaySound === true) {
             var audio = new Audio(audioURL);
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Function to show an element by changing its display style to 'block'
+    /** Function to show an element by changing its display style to 'block' */
     function show(elementId) {
         var element = document.getElementById(elementId);
         if(element) {
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Function to hide an element by changing its display style to 'none'
+    /** Function to hide an element by changing its display style to 'none' */
     function hide(elementId) {
         var element = document.getElementById(elementId);
         if(element) {
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    /* Function to reset the game */
+    /** Function to reset the game */
     function resetGame() {
         gameIsOver = true;
         clearInterval(timerInterval); // Clear the timerInterval
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
         questions.length = 0;
     }
 
-    /* Function to start/update/stop countdown timer */
+    /** Function to start/update/stop countdown timer */
     function startCountdown() {
         var startTime = new Date().getTime();
         var interval = 1000; // Set the interval to 1000ms (1 second)
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
         clearInterval(timerInterval);
     }
 
-    /* Function to start the game */
+    /** Function to start the game */
     function startGame() {
         if(gameIsOver) {
             gameIsOver = false;
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    /* Function to generate random addition and subtraction questions */
+    /** Function to generate random addition and subtraction questions */
     function generateQuestion() {
         var minNumber = 1;
         var maxNumber = 50;
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
         };
     }
 
-    /* Display a question and answer choices */
+    /** Function to display a question and answer choices */
     function displayQuestion() {
         var question = questions[currentQuestionIndex];
         document.getElementById('question-area').textContent = question.text;
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 answers.push(randomAnswer);
             }
         }
-        // Shuffle the answer choices for a random order
+        /** Function to shuffle the answer choices for a random order */
         answers = shuffleArray(answers);
 
         function createClickHandler(answer) {
@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    /* Function to shuffle an array (Fisher-Yates shuffle algorithm */
+    /** Function to shuffle an array (Fisher-Yates shuffle algorithm */
     function shuffleArray(array) {
         for(var i = array.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return array;
     }
 
-    /* Check if the selected answer is correct */
+    /** Function to check if the selected answer is correct */
     function checkAnswer(selectedAnswer) {
         var question = questions[currentQuestionIndex];
         if(!gameIsOver) {
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    /* Function to display correct or try again message */
+    /** Function to display correct or try again message */
     function displayCorrect() {
         var correctDiv = document.getElementById('correct');
         correctDiv.style.display = 'block'; // Make the "Correct!" message visible
@@ -234,14 +234,14 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(hideIncorrectDiv, 1000);
     }
 
-    /* Function to end the game */
+    /** Function to end the game */
     function endGame() {
         var gameOverDiv = document.getElementById('gameOver');
         gameOverDiv.innerHTML = 'Game Over';
         gameOverDiv.style.display = 'block';
         setAnswerButtonsEnabled(false); // Disable the answer buttons when the game ends
     }
-    /* Function to set the answer buttons' enabled/disabled state */
+    /** Function to set the answer buttons' enabled/disabled state */
     function setAnswerButtonsEnabled(enabled) {
         var answerButtons = document.getElementsByClassName('answer-button');
         for(var i = 0; i < answerButtons.length; i++) {
@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    /* Define a click event handler function for the Start/Reset button */
+    /** Function to define a click event handler function for the Start/Reset button */
     function handleClick() {
         startGame();
         document.getElementById('gameOver').style.display = 'none';
