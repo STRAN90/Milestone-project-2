@@ -1,43 +1,42 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Define the questions array at the global scope
-    var questions = [];
-    var score = 0;
-    var playing = false;
-    var timeremaining = 60;
-    var canPlaySound = true;
-    var currentQuestionIndex = 0;
-    var gameIsOver = true;
-    var timerInterval;
+// Define the questions array at the global scope
+let questions = [];
+let score = 0;
+let playing = false;
+let timeremaining = 60;
+let canPlaySound = true;
+let currentQuestionIndex = 0;
+let gameIsOver = true;
+let timerInterval;
 
-    /**  Function to play sound */
-    function playSound(audioURL) {
-        if(canPlaySound === true) {
-            var audio = new Audio(audioURL);
-            audio.play();
-        }
+/**  Function to play sound */
+function playSound(audioURL) {
+    if(canPlaySound === true) {
+        const audio = new Audio(audioURL);
+        audio.play();
     }
+}
 
-    /** Function to show an element by changing its display style to 'block' */
-    function show(elementId) {
-        var element = document.getElementById(elementId);
-        if(element) {
-            element.style.display = 'block';
-        }
+/** Function to show an element by changing its display style to 'block' */
+function show(elementId) {
+const element = document.getElementById(elementId);
+    if(element) {
+        element.style.display = 'block';
     }
+}
 
-    /** Function to hide an element by changing its display style to 'none' */
-    function hide(elementId) {
-        var element = document.getElementById(elementId);
-        if(element) {
-            element.style.display = 'none';
-        }
+/** Function to hide an element by changing its display style to 'none' */
+function hide(elementId) {
+const element = document.getElementById(elementId);
+    if(element) {
+        element.style.display = 'none';
     }
+}
 
-    // Get the Start/Reset button element and add an event listener
-    var startResetButton = document.getElementById('startReset');
+// Get the Start/Reset button element and add an event listener
+const startResetButton = document.getElementById('startReset');
     startResetButton.addEventListener('click', function () {
         if(!gameIsOver) {
-            var shouldReset = confirm("Are you sure you want to reset the game?");
+            let shouldReset = confirm("Are you sure you want to reset the game?");
             if(shouldReset) {
                 resetGame();
             }
@@ -68,12 +67,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /** Function to start/update/stop countdown timer */
     function startCountdown() {
-        var startTime = new Date().getTime();
-        var interval = 1000; // Set the interval to 1000ms (1 second)
+        let startTime = new Date().getTime();
+        let interval = 1000; // Set the interval to 1000ms (1 second)
         function updateTimer() {
-            var currentTime = new Date().getTime();
-            var elapsedSeconds = Math.floor((currentTime - startTime) / 1000);
-            var remainingSeconds = timeremaining - elapsedSeconds;
+            let currentTime = new Date().getTime();
+            let elapsedSeconds = Math.floor((currentTime - startTime) / 1000);
+            let remainingSeconds = timeremaining - elapsedSeconds;
             if(remainingSeconds >= 0) {
                 document.getElementById("timeremainingvalue").innerHTML = remainingSeconds;
             } else {
@@ -112,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("startReset").innerHTML = "RESET GAME";
             stopCountdown();
             questions.length = 0;
-            for(var i = 0; i < 10; i++) {
+            for(let i = 0; i < 10; i++) {
                 questions.push(generateQuestion());
             }
             displayQuestion();
@@ -123,24 +122,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /** Function to generate random addition and subtraction questions */
     function generateQuestion() {
-        var minNumber = 1;
-        var maxNumber = 50;
-        var firstNum = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
-        var operator = Math.random() < 0.5 ? '+' : '-';
-        var answer;
-        var secondNum = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+        let minNumber = 1;
+        let maxNumber = 50;
+        let firstNum = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+        let operator = Math.random() < 0.5 ? '+' : '-';
+        let answer;
+        let secondNum = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
         if(operator === '+') {
             answer = firstNum + secondNum ;
         } else {
             // Ensure there are no negative answers
             if(firstNum < secondNum ) {
-                var temp = firstNum;
+                let temp = firstNum;
                 firstNum = secondNum ;
                 secondNum  = temp;
             }
             answer = firstNum - secondNum ;
         }
-        var questionText = firstNum + ' ' + operator + ' ' + secondNum;
+        let questionText = firstNum + ' ' + operator + ' ' + secondNum;
         // Ensure the answer is a positive integer
         if(answer < 0) {
             return generateQuestion();
@@ -153,13 +152,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /** Function to display a question and answer choices */
     function displayQuestion() {
-        var question = questions[currentQuestionIndex];
+        const question = questions[currentQuestionIndex];
         document.getElementById('question-area').textContent = question.text;
-        var answers = [];
+        const answers = [];
         // Generate a list of unique answer choices including the correct answer
         answers.push(question.answer);
         while(answers.length < 4) {
-            var randomAnswer = Math.floor(Math.random() * 40);
+            let randomAnswer = Math.floor(Math.random() * 40);
             if(!answers.includes(randomAnswer)) {
                 answers.push(randomAnswer);
             }
@@ -172,8 +171,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 checkAnswer(answer);
             };
         }
-        for(var i = 0; i < 4; i++) {
-            var box = document.getElementById('box' + (i + 1));
+        for(let i = 0; i < 4; i++) {
+            const box = document.getElementById('box' + (i + 1));
             box.textContent = answers[i];
             box.onclick = createClickHandler(answers[i]);
         }
@@ -181,9 +180,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /** Function to shuffle an array (Fisher-Yates shuffle algorithm */
     function shuffleArray(array) {
-        for(var i = array.length - 1; i > 0; i--) {
-            var j = Math.floor(Math.random() * (i + 1));
-            var temp = array[i];
+        for(let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            let temp = array[i];
             array[i] = array[j];
             array[j] = temp;
         }
@@ -192,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /** Function to check if the selected answer is correct */
     function checkAnswer(selectedAnswer) {
-        var question = questions[currentQuestionIndex];
+        const question = questions[currentQuestionIndex];
         if(!gameIsOver) {
             if(selectedAnswer === question.answer) {
                 // Correct answer: Increase the score
@@ -214,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /** Function to display correct or try again message */
     function displayCorrect() {
-        var correctDiv = document.getElementById('correct');
+        const correctDiv = document.getElementById('correct');
         correctDiv.style.display = 'block'; // Make the "Correct!" message visible
         /* Use a named function for the setTimeout callback */
         function hideCorrectDiv() {
@@ -224,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function displayIncorrect() {
-        var incorrectDiv = document.getElementById('incorrect');
+        const incorrectDiv = document.getElementById('incorrect');
         incorrectDiv.style.display = 'block';
         playSound("assets/sounds/no_meow.mp3");
         /* Use a named function for the setTimeout callback */
@@ -236,15 +235,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /** Function to end the game */
     function endGame() {
-        var gameOverDiv = document.getElementById('gameOver');
+        const gameOverDiv = document.getElementById('gameOver');
         gameOverDiv.innerHTML = 'Game Over';
         gameOverDiv.style.display = 'block';
         setAnswerButtonsEnabled(false); // Disable the answer buttons when the game ends
     }
     /** Function to set the answer buttons' enabled/disabled state */
     function setAnswerButtonsEnabled(enabled) {
-        var answerButtons = document.getElementsByClassName('answer-button');
-        for(var i = 0; i < answerButtons.length; i++) {
+        const answerButtons = document.getElementsByClassName('answer-button');
+        for(let i = 0; i < answerButtons.length; i++) {
             answerButtons[i].style.pointerEvents = enabled ? 'auto' : 'none';
         }
     }
@@ -255,6 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('gameOver').style.display = 'none';
     }
 
+document.addEventListener("DOMContentLoaded", function () {
     // Add the click event listener using the handler function
     document.getElementById('startReset').addEventListener('click', function () {
         if(!playing) {
