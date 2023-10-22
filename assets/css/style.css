@@ -259,6 +259,16 @@ a:hover {
 
 /* CONFIRMATION.HTML */
 
+.background-image {
+  background-image: url("../images/sky.jpg");
+  height: max-content;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  font-size: xxx-large;
+  color: #3e3e45;
+}
+
 div#confirmation p {
   text-align: center;
   padding-left: 10px;
