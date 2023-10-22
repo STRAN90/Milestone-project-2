@@ -293,12 +293,14 @@ For user:
 </p>
 
 
-### W3C Validator
+### Code Validator
 
 The W3C validator was used to validate the HTML on all pages of the website. It was also used to validate CSS in the style.css file.
 
 * [Webpage HTML](README.docs/w3c.png)
 * [Webpage CSS](README.docs/w3c_css.png)
+
+JShint website was used to check JavaScript code was formatted correctly. 
 
 ### Lighthouse
 
